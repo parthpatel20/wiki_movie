@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,13 +27,7 @@ Widget fullWidthMovieCard(
             alignment: Alignment.center,
             imageUrl:
                 "https://image.tmdb.org/t/p/original/${movie.backdropPath}",
-            placeholder: (context, url) => Platform.isIOS
-                ? CupertinoActivityIndicator()
-                : SizedBox(
-                    child: CircularProgressIndicator(),
-                    height: 10.0,
-                    width: 10.0,
-                  ),
+            placeholder: (context, url) => CupertinoActivityIndicator(),
             errorWidget: (context, url, error) => CachedNetworkImage(
               imageUrl:
                   "https://propertywiselaunceston.com.au/wp-content/themes/property-wise/images/no-image.png",
